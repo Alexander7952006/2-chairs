@@ -58,7 +58,7 @@ def function(calc):
     if result != None:
         calc = calc.replace(' ', '')
         if ('**' in calc or '++' in calc or calc[0] == '+' or '++' in calc or
-            '---' in calc):
+            '---' in calc or '-+' in calc):
             print('ошибка ввода')
             return True
         else:
