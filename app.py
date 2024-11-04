@@ -40,7 +40,7 @@ def function(calc):
         list_num.append(num)
 
     if '  ' in calc or calc[0] == ' ' or calc[-1] == ' ':
-        print('ошибка ввода')
+        print('Ошибка ввода')
         return True
     calc = calc.replace('минус', '-')
     calc = calc.replace('плюс', '+')
@@ -58,14 +58,14 @@ def function(calc):
     if result != None:
         calc = calc.replace(' ', '')
         if ('**' in calc or '++' in calc or calc[0] == '+' or '++' in calc or
-            '---' in calc or '-+' in calc):
-            print('ошибка ввода')
+            '---' in calc or '-+' in calc or '+--' in calc or '*--' in calc):
+            print('Ошибка ввода')
             return True
         else:
             try:
                 print(list_letter[list_num.index(result)])
             except ValueError:
-                print('ошибка ввода')
+                print('Ошибка ввода')
 
                 
 function(input('Введите выражение: '))
