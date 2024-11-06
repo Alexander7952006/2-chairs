@@ -1,7 +1,5 @@
 def function(calc):
-    result = None
     """ Функция, принимающая строку от пользователя и возвращающая ответ """
-    
     list_letter = ['ноль', 'один', 'два', 'три', 'четыре', 'пять', 'шесть',
                    'семь', 'восемь', 'девять', 'десять', 'одиннадцать',
                    'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать',
@@ -55,18 +53,18 @@ def function(calc):
         print('Ошибка ввода')
     except NameError:
         print('Ошибка ввода')
-    if result != None:
-        calc = calc.replace(' ', '')
-        if ('**' in calc or '++' in calc or calc[0] == '+' or '++' in calc or
-            '---' in calc or '-+' in calc or '+--' in calc or '*--' in calc or
-            calc.find('--') == 0):
+
+    calc = calc.replace(' ', '')
+    if ('**' in calc or '++' in calc or calc[0] == '+' or '++' in calc or
+        '---' in calc or '-+' in calc or '+--' in calc or '*--' in calc or
+        calc.find('--') == 0):
+        print('Ошибка ввода')
+        return True
+    else:
+        try:
+            print(list_letter[list_num.index(result)])
+        except ValueError:
             print('Ошибка ввода')
-            return True
-        else:
-            try:
-                print(list_letter[list_num.index(result)])
-            except ValueError:
-                print('Ошибка ввода')
 
                 
 function(input('Введите выражение: '))
