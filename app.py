@@ -1,5 +1,6 @@
 def function(calc):
     """ Функция, принимающая строку от пользователя и возвращающая строку """
+    result = None
     list_letter = ['ноль', 'один', 'два', 'три', 'четыре', 'пять', 'шесть',
                    'семь', 'восемь', 'девять', 'десять', 'одиннадцать',
                    'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать',
@@ -53,23 +54,24 @@ def function(calc):
         print('Ошибка ввода')
     except NameError:
         print('Ошибка ввода')
-
-    calc = calc.replace(' ', '')
-    if ('**' in calc or '++' in calc or calc[0] == '+' or '++' in calc or
-        '---' in calc or '-+' in calc or '+--' in calc or '*--' in calc or
-        calc.find('--') == 0):
-        print('Ошибка ввода')
-        return True
-    else:
-        try:
-            print(list_letter[list_num.index(result)])
-        except ValueError:
+    
+    if result != None:
+        calc = calc.replace(' ', '')
+        if ('**' in calc or '++' in calc or calc[0] == '+' or '++' in calc or
+            '---' in calc or '-+' in calc or '+--' in calc or '*--' in calc or
+            calc.find('--') == 0):
             print('Ошибка ввода')
+            return True
+        else:
+            try:
+                print(list_letter[list_num.index(result)])
+            except ValueError:
+                print('Ошибка ввода')
 
 print('''Здравствуйте! Это программа текстовый калькулятор. Возможности
 программы: работа с целыми числами(отриц и полож), работа с неограниченным
 количеством операций и со скобками. ВАЖНО: если резульнтат по модулю 
-превысит 9999, то программа выдаст ошибку.')
+превысит 9999, то программа выдаст ошибку.''')
 
 function(input('Введите выражение: '))
 input('Введите Enter для выхода')
